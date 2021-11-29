@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  course-golang:
+    container_name: "course-golang"
+    build: .
+    image: course-golang:1.0
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_NAME=github

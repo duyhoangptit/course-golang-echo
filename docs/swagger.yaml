@@ -1,0 +1,252 @@
+basePath: /
+definitions:
+  req.BookmarkReq:
+    properties:
+      repo:
+        type: string
+    required:
+    - repo
+    type: object
+  req.SignInReq:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  req.SignUpReq:
+    properties:
+      email:
+        type: string
+      full_name:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - full_name
+    - password
+    type: object
+  res.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      message:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: More
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Github Trending API
+  version: "1.0"
+paths:
+  /bookmark/add:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Thông tin repo name cần bookmark
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/req.BookmarkReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/res.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/res.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/res.Response'
+      security:
+      - jwt: []
+      summary: Bookmark repository
+      tags:
+      - github
+  /bookmark/delete:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: Thông tin bookmark cần unbookmark
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/req.BookmarkReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/res.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/res.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/res.Response'
+      security:
+      - jwt: []
+      summary: Delete bookmark repository
+      tags:
+      - github
+  /bookmark/list:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/res.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/res.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/res.Response'
+      security:
+      - jwt: []
+      summary: Get list bookmark
+      tags:
+      - github
+  /github/trending:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/res.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/res.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/res.Response'
+      security:
+      - jwt: []
+      summary: Get list repo trending
+      tags:
+      - github
+  /user/profile:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/res.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/res.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/res.Response'
+      security:
+      - jwt: []
+      summary: View profile of user
+      tags:
+      - users
+  /user/sign-in:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Thông tin đăng nhập
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/req.SignInReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/res.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/res.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/res.Response'
+      summary: Sign in to access your account
+      tags:
+      - users
+  /user/sign-up:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Thông tin đăng ký
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/req.SignUpReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/res.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/res.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/res.Response'
+      summary: Create new account
+      tags:
+      - users
+securityDefinitions:
+  jwt:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

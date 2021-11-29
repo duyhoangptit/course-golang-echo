@@ -1,0 +1,11 @@
+development:
+  dialect: postgres
+  datasource: host=host.docker.internal port=5432 user=postgres password=root dbname=postgres sslmode=disable # localhost=host.docker.internal
+  dir: migrations
+  table: migrations
+
+production:
+  dialect: postgres
+  datasource: host=host.docker.internal port=5432 user=postgres password=root dbname=postgres sslmode=disable
+  dir: migrations
+  table: migrations
