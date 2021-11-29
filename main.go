@@ -29,7 +29,7 @@ func setupDB() *database.PostgreSql {
 
 	// setup db
 	sql := &database.PostgreSql{
-		Host:     "localhost",
+		Host:     "host.docker.internal",
 		Port:     5432,
 		UserName: "postgres",
 		Password: "root",
