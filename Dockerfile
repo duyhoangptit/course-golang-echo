@@ -15,8 +15,9 @@ COPY . .
 
 # Build
 RUN go mod init course-golang
+# Download all the dependencies that are required in your source files and update go.mod file with that dependency.
+# Remove all dependencies from the go.mod file which are not required in the source files.
 RUN go mod tidy
-RUN go mod vendor
 
 # enviroment
 WORKDIR cmd/pro
