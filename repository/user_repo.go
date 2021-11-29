@@ -2,8 +2,8 @@ package repository
 
 import (
 	"context"
-	"go-module/domain/req"
-	"go-module/model"
+	"course-golang/domain/req"
+	"course-golang/model"
 )
 
 type UserRepo interface {

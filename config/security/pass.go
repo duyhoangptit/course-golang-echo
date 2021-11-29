@@ -1,8 +1,8 @@
 package security
 
 import (
+	"course-golang/log"
 	"fmt"
-	"go-module/log"
 	"golang.org/x/crypto/bcrypt"
 )
 

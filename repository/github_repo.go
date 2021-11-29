@@ -2,7 +2,7 @@ package repository
 
 import (
 	"context"
-	"go-module/model"
+	"course-golang/model"
 )
 
 type GithubRepo interface {

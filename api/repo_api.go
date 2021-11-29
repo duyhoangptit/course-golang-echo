@@ -1,14 +1,14 @@
 package api
 
 import (
+	req2 "course-golang/domain/req"
+	"course-golang/domain/res"
+	"course-golang/log"
+	"course-golang/model"
+	"course-golang/repository"
 	"github.com/golang-jwt/jwt"
 	"github.com/google/uuid"
 	"github.com/labstack/echo/v4"
-	req2 "go-module/domain/req"
-	"go-module/domain/res"
-	"go-module/log"
-	"go-module/model"
-	"go-module/repository"
 	"net/http"
 	"strings"
 )

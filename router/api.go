@@ -1,9 +1,9 @@
 package router
 
 import (
+	"course-golang/api"
+	"course-golang/middleware"
 	"github.com/labstack/echo/v4"
-	"go-module/api"
-	"go-module/middleware"
 )
 
 type API struct {

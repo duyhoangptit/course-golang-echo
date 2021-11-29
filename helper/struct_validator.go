@@ -1,12 +1,12 @@
 package helper
 
 import (
+	"course-golang/log"
 	"github.com/go-playground/locales/en"
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
 	en_translations "github.com/go-playground/validator/v10/translations/en"
 	"github.com/pkg/errors"
-	"go-module/log"
 	"strings"
 )
 

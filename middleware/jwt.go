@@ -1,10 +1,10 @@
 package middleware
 
 import (
+	"course-golang/config/security"
+	"course-golang/model"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"go-module/config/security"
-	"go-module/model"
 )
 
 func JWTMiddleware() echo.MiddlewareFunc {

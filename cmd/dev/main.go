@@ -1,22 +1,22 @@
 package main
 
 import (
+	"course-golang/api"
+	"course-golang/config/database"
+	_ "course-golang/docs"
+	"course-golang/helper"
+	"course-golang/log"
+	repository "course-golang/repository/impl"
+	"course-golang/router"
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"github.com/swaggo/echo-swagger"
-	"go-module/api"
-	"go-module/config/database"
-	_ "go-module/docs"
-	"go-module/helper"
-	"go-module/log"
-	repository "go-module/repository/impl"
-	"go-module/router"
 	"os"
 	"time"
 )
 
 func setupLog() {
-	fmt.Println("Setup LOG")
+	fmt.Println("Development enviroment")
 	// log
 	fmt.Println(">>>>", os.Getenv("APP_NAME"))
 	//os.Setenv("APP_NAME", "tiger")

@@ -1,8 +1,8 @@
 package security
 
 import (
+	"course-golang/model"
 	"github.com/dgrijalva/jwt-go"
-	"go-module/model"
 	"time"
 )
 

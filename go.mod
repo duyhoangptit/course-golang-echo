@@ -1,4 +1,4 @@
-module go-module
+module course-golang
 
 go 1.16
 

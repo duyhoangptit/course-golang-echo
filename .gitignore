@@ -1,4 +1,4 @@
 vendor
-go-module.exe
+course-golang.exe
 log_files/error/*.log
 .idea

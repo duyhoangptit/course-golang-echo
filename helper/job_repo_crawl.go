@@ -2,12 +2,12 @@ package helper
 
 import (
 	"context"
+	"course-golang/constant"
+	"course-golang/log"
+	"course-golang/model"
+	"course-golang/repository"
 	"fmt"
 	"github.com/gocolly/colly"
-	"go-module/constant"
-	"go-module/log"
-	"go-module/model"
-	"go-module/repository"
 	"regexp"
 	"runtime"
 	"strings"

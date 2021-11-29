@@ -1,6 +1,6 @@
 # BE golang learning
 
-1. go mod init go-module
+1. go mod init course-golang
 
 2. go build
 

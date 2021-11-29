@@ -2,12 +2,12 @@ package repository
 
 import (
 	"context"
+	"course-golang/config/database"
+	"course-golang/constant"
+	"course-golang/log"
+	"course-golang/model"
 	"database/sql"
 	"github.com/lib/pq"
-	"go-module/config/database"
-	"go-module/constant"
-	"go-module/log"
-	"go-module/model"
 	"time"
 )
 
